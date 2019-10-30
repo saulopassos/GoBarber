@@ -9,7 +9,7 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
@@ -18,11 +18,11 @@ module.exports = {
       },
       password_hash: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNUll: false,
       },
       provider: {
-        type: Sequelize.STRING,
-        default: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
         allowNull: false,
       },
       created_at: {
@@ -36,7 +36,7 @@ module.exports = {
     });
   },
 
-  down: (queryInterface, Sequelize) => {
+  down: queryInterface => {
     return queryInterface.dropTable('users');
   },
 };
