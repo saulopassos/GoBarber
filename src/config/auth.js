@@ -1,4 +1,4 @@
 export default {
-  secret: 'sxw*1000',
+  secret: process.env.APP_SECRET,
   expiresIn: '7d',
 };
